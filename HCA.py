@@ -2,26 +2,43 @@
 
 import sys, math, hashlib,readline
 from time import time, localtime, strftime
-from hashlib import md5, sha1, sha224, sha256, sha384
+from hashlib import md5, sha1, sha224, sha256, sha384 , sha512
 
 ########################### CONFIGURACION BASICA #########################
 
-LONGITUD = 6
+LONGITUD = 12
 ALFABETO = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ0123456789_-.@!~/\|"
 
 ##########################################################################
 #header       
-
+print("mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmdmdmmdmmmmmmmmmdyooydmmmmmmdmddddmdmddddmmmmmmmmmmmmdmmmmmmmmmmmmmmm")
+print("mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmdmmmmmmmmmmdhyo/------:+shmmmmdmdddddddddddddddddmmddddddmmmmmmmddddd")
+print("mmmmmmmmmmmmmmmmmmmmmmmdmdmmmmmmmmmmmmmhs+:--------------:+shdmmmmmdddmmdddmmmmmmmmmmmmmmmdmmmmmmmmm")
+print("mmmmmmmmmmmmmmmmmmmmmmdmddmmmmmmmmmhs+:-----------------------/oydmmdmdddhddddmmmmmmmdddmmdmdmmmmmmm")
+print("mmmmmmmmmmmmmmmmmmmmmmmmmdmmmmmho/-:o:---:o:------------:o:---:+/:/ohdddddddddmmmmddddddddddddmmmmmm")
+print("mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm/---:s+ossos/------------/soos+/o:--:/dhhhhhhhhhhddhhhhhddddhhddddddd")
+print("mmmmmddmdddddddddhdddddddmmmmmm/----ommmddd/------------/hddddds----/dddhddddddddddddddddddddddddmmm")
+print("mmmmmmmmmmmmmmdddddddmmdhdddddd/--:+dmhdmmdh------------hdhhhhhh+---:dddddddhddddhhhhhhhhhhhhddddmmm")
+print("mmmmmmmmmmmmmmmmmdddmmmmmddddhh/:hoydddhhhdd/h/------/y/yyyyyyyyo/s::hhhhhhyyhhhhyyyyyyyyyyyyyhhhdmm")
+print("mmmmmmmmmmmmmmmmmmmmdmmmmdmmddd/---+hhhddddy-:--------:-sdddddddo---:ddddddddddmmdddddddddddddmmmmmm")
+print("mmmmmmmmmmmmmmmmmmmmmmmdddmmmmm/----sddddds--------------sdddmdy----:mmmmmmmdmmmmmdmmmmmmmmmmmmmmmmm")
+print("mmmmmmmmmdddddddddmddddddddmmmm/----s++o++s/------------:s++oooy:---/mmmmddmddmmmmmmmmmmmmmmmmmmmmmm")
+print("mmmmmmmddhhyhhhhhhhhhhhhhhddddhy+:--+:----+:----+os+----:+:---:o---+hmdddddddmmmmmmmmmmdhdmmmmmmmmmm")
+print("mmmmmdddmdddddddddddddddddddddddddhs++yo--------++++--------oyo+shmdddmmddmmmmmmmmmmmmmdhdmmmmmmmmmm")
+print("mmmmmmmmmmddddddddmmmddmdmdmmdmdmdmmmmdd---//----------:/---hmmmmmmddddmmmmmmmmmmmmmmmmmdmmmmmmmmmmm")
+print("mmmdmmmmmmmmddmmmdmddddddmdddddddddddddd+:-oo--++--+o--+s-:+mmmmdddddddmmmmmmmmddmddddddmmmmmmmmmmmm")
+print("mmmmmmdmmmmmmmmmdmddddddddddddmddddhdddddmddy:-os--os-:sddmmmdddddmmmmmmmmmmmmddmmmmmmmmmmmmmmmmmmmm")
+print("mmmmmmmmmmddddmmmmmmddhddddddddmmmddddddmdddddddy//yddmdmddmmdmmdmmmmmmmmmmmmmmmmmmmmmmmmmmmddmmmmmm")
+print("mmmmmmmmmmmmmmmmmmmmmmmmmmmddmmmmmmmmmmmmmdhddmddddddddddddmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmdddddmm")
 print "++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-print "+              HASH CRACKER APOCALIPSE V 1.0           +"
+print "+              HASH CRACKER APOCALIPSE v 1.0           +"
 print "+                   #adm@T3am-Whoami                   +"
 print "+                  #Created : byhash :)                +"
 print "+     #Algoritmos: md5-sha1-sha256-sha384-sha512       +" 
 print "++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-passhash = raw_input("Presiona Enter Para iniciar el Ataque ^_^")
-HASH_BUSCADO = raw_input("INserte hash:")
-passhash = passhash.strip('\n')       
-
+HASH_BUSCADO = raw_input("Inserte hash:")
+TYPE  =  input ("Inserta el tipo de hash:")
+info = raw_input("Presiona Enter Para iniciar el Ataque ^_^")
 
 ########################### CONFIGURACION EXTRA ####################
 
@@ -33,8 +50,34 @@ GENERAR_FICHERO = True
 DESTINO_FICHERO = "passdic.txt"
 
 BUSCAR_HASH = True
-HASH_ALGORITMO = md5 # Opciones: md5, sha1, sha224, sha256, sha384, sha512
+HASH_ALGORITMO = (TYPE) # Opciones: md5, sha1, sha224, sha256, sha384, sha512
 HASH_BUSCADO = (HASH_BUSCADO)
+
+#len
+
+if len(HASH_BUSCADO) == 32:
+
+   print ("Tu hash es un:MD5")
+
+elif len(HASH_BUSCADO) == 40:
+ 
+   print ("Tu hash es un:SHA1")
+
+elif len(HASH_BUSCADO) == 56:
+
+        print ("Tu hash es un:SHA224")
+
+elif len(HASH_BUSCADO) == 60:
+
+         print ("Tu hash es un:SHA256")
+
+elif len(HASH_BUSCADO) == 96:
+
+         print ("Tu hash es un:SHA384")
+
+elif len(HASH_BUSCADO) == 128:
+
+         print ("Tu hash es un:SHA512")
 
 
 ####################################################################
@@ -153,4 +196,4 @@ else:
 if GENERAR_FICHERO:
   f.close()
 
-        
+
